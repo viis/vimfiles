@@ -46,8 +46,9 @@ set autoindent
 " visual help
 set number
 set ruler
-set listchars=eol:¬,tab:>-,trail:~,extends:>,precedes:<
+set listchars=eol:¬,tab:>-,trail:~
 set list
+set colorcolumn=120
 
 " search
 set hlsearch
