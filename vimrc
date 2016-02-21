@@ -58,9 +58,7 @@ set smartcase
 
 " line breaks
 set nowrap
-set showbreak=>>>
 set formatoptions=l
-set lbr
 
 set wildmenu
 set showcmd
