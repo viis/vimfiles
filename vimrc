@@ -91,7 +91,7 @@ set history=200
 nnoremap <silent> <Leader>n :NERDTreeToggle<CR>
 
 " bclose
-nnoremap <silent> <Leader>c :Bclose<CR>
+nnoremap <silent> <Leader>x :Bclose<CR>
 "
 " buffers
 set hidden
