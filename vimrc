@@ -27,6 +27,7 @@ filetype plugin indent on    " required
 syntax on
 
 " color theme
+set t_Co=256
 set background=light
 colorscheme solarized
 
@@ -46,7 +47,7 @@ set autoindent
 " visual help
 set number
 set ruler
-set listchars=eol:¬,tab:>-,trail:~
+set listchars=tab:>-,trail:~
 set list
 set colorcolumn=120
 
@@ -96,3 +97,8 @@ nnoremap <silent> <Leader>x :Bclose<CR>
 " buffers
 set hidden
 nnoremap <silent> <Leader>b :b#<CR>
+nnoremap <silent> <Leader>j :bn<CR>
+nnoremap <silent> <Leader>k :bp<CR>
+
+" search for selected text with //
+vnoremap // y/<C-R>"<CR>"
