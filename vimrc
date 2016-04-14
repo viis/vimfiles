@@ -47,7 +47,7 @@ set autoindent
 " visual help
 set number
 set ruler
-set listchars=tab:>-,trail:~
+set listchars=tab:>>,trail:~
 set list
 set colorcolumn=120
 
