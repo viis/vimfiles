@@ -15,16 +15,20 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'viis/vim-bclose'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'Townk/vim-autoclose'
 Plugin 'tpope/vim-surround'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'vim-perl/vim-perl'
+Plugin 'scrooloose/syntastic'
+Plugin 'editorconfig/editorconfig-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 syntax on
+let perl_include_pod = 1
+let perl_extended_vars = 1
 
 " color theme
 set t_Co=256
@@ -38,7 +42,6 @@ set encoding=utf-8
 let mapleader = ","
 
 " tabs
-set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
@@ -47,7 +50,7 @@ set autoindent
 " visual help
 set number
 set ruler
-set listchars=tab:>>,trail:~
+set listchars=tab:>-,trail:-
 set list
 set colorcolumn=120
 
@@ -102,3 +105,18 @@ nnoremap <silent> <Leader>k :bp<CR>
 
 " search for selected text with //
 vnoremap // y/<C-R>"<CR>"
+
+" enable mouse
+set mouse=a
+
+" syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_pylint_post_args='--disable=import-error'
+let g:syntastic_mode_map = {'passive_filetypes': ['perl']}
+let g:syntastic_javascript_checkers = ['eslint']
