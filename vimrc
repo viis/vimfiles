@@ -120,3 +120,8 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_python_pylint_post_args='--disable=import-error'
 let g:syntastic_mode_map = {'passive_filetypes': ['perl']}
 let g:syntastic_javascript_checkers = ['eslint']
+
+" split windows
+noremap <Tab> <C-W>w
+noremap <Bar> <C-W>v<C-W><Right>
+noremap - <C-W>s<C-W><Down>
