@@ -125,3 +125,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 noremap <Tab> <C-W>w
 noremap <Bar> <C-W>v<C-W><Right>
 noremap - <C-W>s<C-W><Down>
+
+" minibufexpl
+let g:miniBufExplorerAutoStart = 0
+nnoremap <silent> <Leader>u :MBEToggle<cr>
