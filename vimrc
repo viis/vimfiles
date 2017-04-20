@@ -79,7 +79,7 @@ nnoremap gj j
 nnoremap gk k
 
 " Ctrl-h to escape insert mode
-inoremap <C-h> <ESC>
+inoremap <S-h> <ESC>
 
 "This unsets the 'last search pattern' register by hitting return
 nnoremap <CR> :noh<CR>
@@ -117,8 +117,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_python_pylint_post_args='--disable=import-error'
+"let g:syntastic_python_pylint_post_args='--disable=import-error'
 let g:syntastic_mode_map = {'passive_filetypes': ['perl']}
+let g:syntastic_python_checkers = ['python3 -m flake8.run']
 let g:syntastic_javascript_checkers = ['eslint']
 
 " split windows
