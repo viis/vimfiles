@@ -79,7 +79,7 @@ nnoremap gj j
 nnoremap gk k
 
 " Ctrl-f to escape insert mode
-inoremap <C-f> <ESC>
+inoremap jk <ESC>
 
 "This unsets the 'last search pattern' register by hitting return
 nnoremap <CR> :noh<CR>
