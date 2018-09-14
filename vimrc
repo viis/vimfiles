@@ -10,7 +10,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 " plugins
 Plugin 'tpope/vim-fugitive'
-Plugin 'wincent/command-t'
 Plugin 'scrooloose/nerdtree'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'viis/vim-bclose'
@@ -18,17 +17,15 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-surround'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'vim-perl/vim-perl'
 Plugin 'scrooloose/syntastic'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 syntax on
-let perl_include_pod = 1
-let perl_extended_vars = 1
 
 " color theme
 set t_Co=256
@@ -117,10 +114,10 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-"let g:syntastic_python_pylint_post_args='--disable=import-error'
+let g:syntastic_python_pylint_post_args='--disable=import-error'
 let g:syntastic_mode_map = {'passive_filetypes': ['perl']}
-let g:syntastic_python_checkers = ['python3 -m flake8.run']
-let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_python_checkers = ['flake8']
+"let g:syntastic_javascript_checkers = ['eslint']
 
 " split windows
 noremap <Tab> <C-W>w
@@ -134,3 +131,7 @@ nnoremap <c-l> <c-w>l
 " minibufexpl
 let g:miniBufExplorerAutoStart = 0
 nnoremap <silent> <Leader>u :MBEToggle<cr>
+
+" ctrlp
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
