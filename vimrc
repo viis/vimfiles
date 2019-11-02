@@ -17,10 +17,11 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-surround'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/syntastic'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
+Plugin 'w0rp/ale'
+Plugin 'majutsushi/tagbar'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -107,19 +108,6 @@ vnoremap // y/<C-R>"<CR>"
 " enable mouse
 set mouse=a
 
-" syntastic settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_pylint_post_args='--disable=import-error'
-let g:syntastic_mode_map = {'passive_filetypes': ['perl']}
-let g:syntastic_python_checkers = ['flake8']
-"let g:syntastic_javascript_checkers = ['eslint']
-
 " split windows
 noremap <Tab> <C-W>w
 noremap <Bar> <C-W>v<C-W><Right>
@@ -143,3 +131,15 @@ if executable('ag')
 endif
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
+
+" ALE
+let b:ale_fixers = {'python': ['black']}
+nnoremap <silent> <Leader>f :ALEFix<CR>
+
+" ctags
+set autochdir
+set tags=tags
+nnoremap <silent> <Leader>s :ts<CR>
+
+" tagbar
+nnoremap <silent> <Leader>t :TagbarToggle<CR>
