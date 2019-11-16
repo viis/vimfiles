@@ -4,7 +4,7 @@
 
 Clone this repo to your ~/.vim directory
 
-    git clone https://github.com/viis/vimfiles ~/.vim
+    git clone --recurse-submodules https://github.com/viis/vimfiles ~/.vim
 
 Link your ~/.vimrc
 
