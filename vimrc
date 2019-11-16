@@ -106,7 +106,7 @@ nnoremap <silent> <Leader>k :bp<CR>
 vnoremap // y/<C-R>"<CR>"
 
 " enable mouse
-set mouse=a
+set mouse=v
 
 " split windows
 noremap <Tab> <C-W>w
