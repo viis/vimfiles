@@ -32,7 +32,7 @@ syntax on
 " color theme
 set t_Co=256
 set background=light
-colorscheme solarized
+colorscheme morning
 
 " use UTF-8
 set encoding=utf-8
